@@ -66,6 +66,7 @@ function insertar(){
 }
 
 function mostrar(){
+    $('#placeToInsert').html("");
     client.getTable("Item").read().then(function (todoItems) {
         var li=''; 
         for (var i = 0; i < todoItems.length; i++) {
@@ -82,6 +83,7 @@ function mostrar(){
 
 function busqueda(texto){
     alert(texto);
+    $('#placeToInsert').html("");
     client.getTable("Item").where({
         text: texto
     }).read().then(function (todoItems) {
